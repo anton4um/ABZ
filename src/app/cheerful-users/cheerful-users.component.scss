@@ -1,0 +1,118 @@
+$text_color: coral;
+
+input[name="pathToFileUpload"] {
+  border-radius: 0 5px 5px 0;
+}
+
+.input-group-append {
+  /* welding input and upload button */
+  height: 65px;
+}
+// styling  signup form button
+.signup-set-btn-style {
+  color: white;
+  border-color: darkgrey;
+  background-color: $text_color;
+  width: 290px;
+  font-size: 18px;
+}
+
+.signup-set-btn-style:hover {
+  background-color: lightcoral;
+}
+
+.signup-set-btn-style:active {
+  color: white;
+  background-color: red;
+}
+
+.signup-set-btn-style:disabled {
+  color: black;
+  background-color: grey;
+}
+
+// main box sizes wich conteins loaded user data as name, email etc...
+.user-data-box {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.user-data-text {
+  /* text align of user data */
+  text-align: center;
+  overflow-wrap: normal;
+  text-overflow: ellipsis;
+  overflow: scroll;
+}
+/* set Show More button style */
+.showmore-set-btn-style {
+  color: $text_color;
+  border-color: $text_color;
+  background-color: transparent;
+  width: 290px;
+  font-size: 18px;
+}
+
+/*ShowMore button style*/
+.showmore-set-btn-style:hover {
+  background-color: bisque;
+}
+
+/* upload photo button style */
+.upload-btn {
+  color: $text_color;
+  border-color: $text_color;
+  background-color: transparent;
+  height: 60px;
+  width: 250px;
+  margin-top: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.upload-btn:hover {
+  background-color: bisque;
+}
+
+.upload-btn:active {
+  background-color: bisque;
+  color: $text_color;
+}
+
+.upload-icon-box,
+.upload-icon {
+  display: none;
+}
+
+// media queues starts
+@media (max-width: 768px) {
+  // class for upload elements align
+  .upload-field-padding {
+    padding-left: 0px;
+  }
+}
+@media (max-width: 567px) {
+  //calss for hiding upload button according to condition
+  .upload-btn {
+    display: none;
+  }
+// sizing frame for upload icon
+  .upload-icon-box {
+    width: 80px;
+    height: 60px;
+    margin-top: 4px;
+    border: 2px solid $text_color;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+  }
+  // displaying upload icon according to condition
+  .upload-icon {
+    display: inline;
+    padding-top: 25%;
+  }
+}
+
+/*# sourceMappingURL=cheerful-users.min.css.map */

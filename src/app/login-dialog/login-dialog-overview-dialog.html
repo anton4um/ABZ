@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>
+  Please SignUp or Login </h1>
+  <div mat-dialog-content>
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <!-- <mat-label>Your email:</mat-label> -->
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="email"
+          formControlName="email"
+        />
+        <mat-error
+          *ngIf="!authForm.get('email').valid && authForm.get('email').touched"
+        >
+          Enter a valid email
+        </mat-error>
+      </mat-form-field>
+      <!-- <mat-label>Your password:</mat-label> -->
+      <mat-form-field>
+        <input
+          formControlName="password"
+          matInput
+          type="password"
+          placeholder="Password"
+          minlength="6"
+        />
+        <mat-error
+          *ngIf="
+            !authForm.get('password').valid && authForm.get('password').touched
+          "
+        >
+          Enter a valid password
+        </mat-error>
+      </mat-form-field>
+
+      <div mat-dialog-actions>
+        <button mat-button type="submit">
+          {{ isInLoginMode ? "Sign In" : "Sign Up" }}
+        </button>
+        <button mat-button type="button" (click)="switchLoginMode()">
+          Switch to {{ isInLoginMode ? "Sign Up" : "Sign In" }}
+        </button>
+      </div>
+    </form>
+  </div>
+

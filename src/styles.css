@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@font-face {
+  font-family: Overpass;
+  src: url("https://fonts.googleapis.com/css?family=Overpass:600|Source+Sans+Pro");
+}
+*{
+  text-transform: none !important;
+}
+h1,h2,h3,h4,a,span,button,div,ul,li>*{
+  font-family: "Overpass:600";
+}
+p,h5{
+  font-family: "Source Sans Pro";
+}
