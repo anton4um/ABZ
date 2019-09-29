@@ -10,6 +10,7 @@ p[class="nav-link"]{
 a > img:hover{
   cursor: pointer;
 }
+/* contact information in footer(email, phone, etc...) */
 .footer-contact-list{
   margin-top: -5px;
 }
@@ -23,6 +24,7 @@ a > img:hover{
 .nav .nav-item{
   height: 35px;
 }
+/* menu is located at the top of footer */
 .footer-menu{
   margin-bottom: 2.5rem;
   margin-top: 1rem;
@@ -36,17 +38,21 @@ a > img:hover{
   font-size: 1rem;
   font-weight: unset;
 }
+/* links under footer menu */
 .footer-links{
   width: 500px;
 }
+/* general box for contact list and footer links */
 .footer-contact-and-links-wrap{
   margin-top: 1rem;
 }
+/* general wrapper for social net icons and explonatory text */
 .footer-icons-wrap{
   margin-top: 2.5rem;
   align-items: center;
   margin-bottom: 2.5rem;
 }
+/* explanatory text, at the bottom of footer */
 .footer-icons-text{
   color: white;
 }

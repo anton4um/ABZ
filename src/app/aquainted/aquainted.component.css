@@ -2,28 +2,24 @@
 
 
 #man-mobile-img{
-  /*background-image: url("../../img/man-mobile.svg");*/
   height: 284px;
   width: 289px;
   margin: auto;
   display: block;
 }
 #html-img{
-  /*background-image: url("../../img/html.svg");*/
   height: 114px;
   width: 100px;
   margin: auto;
   display: block;
 }
 #css-img{
-  /*background-image: url("../../img/css.svg");*/
   height: 114px;
   width: 100px;
   margin: auto;
   display: block;
 }
 #js-img{
-  /*background-image: url("../../img/javascript.svg");*/
   height: 114px;
   width: 100px;
   margin: auto;
@@ -31,28 +27,29 @@
 }
 
 @media(max-width: 767px){
+  /* alignment text about technologies (HTML CSS JS) */
   .text-tech-align{
     text-align: center;
     margin: 0 auto;
   }
+  /* main text in fromnt of page alignment */
   .main-text-align{
     text-align: center;
   }
+  /* width of text about technologies html css js */
   .text-about-tech-width{
     width: 250px;
   }
 }
 
 @media(min-width: 768px){
-  /*#man-mobile-img{*/
-    /*margin-top: 55px;*/
-  /*}*/
   .main-text-align{
     text-align: left;
   }
   .text-about-tech-width{/*ширина блока для текста про технологии*/
     width: 400px;
   }
+  /* alignment box for images and text about technologies */
   .text-tech-align-together{/* выравнивание текста заголовка и текста про технологии */
     text-align: left;
   }

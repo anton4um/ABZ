@@ -4,38 +4,45 @@
   <!--</div>-->
 
   <!-- <div class="row"> -->
-    <!--start row-->
+  <!--start row-->
 
-    <div class="container">
-      <div class="row">
-<!-- start row for user -->
-        <div
-          class="text-center"
-          *ngFor="let user of users"
-          class="col-sm-12 col-md-4 col-lg-4 col-xl-4"
-        >
-          <div class="user-data-box">
-            <div class="text-center">
+  <div class="container">
+    <div class="row">
+      <!-- start row for user -->
+      <div
+        class="text-center"
+        *ngFor="let user of users"
+        class="col-sm-12 col-md-4 col-lg-4 col-xl-4"
+      >
+        <div class="user-data-box">
+          <div class="row">
+            <div
+              class="text-center col-sm-12 col-md-12 col-lg-6 col-xl-6 user-photo-align"
+            >
               <img
                 src="{{ user.photo }}"
                 class="rounded-circle"
                 style="height: 72px; width: 72px"
               />
             </div>
-            <h4 class="user-data-text">{{ user.name }}</h4>
-            <p class="user-data-text">
-              {{ user.email }}<br />
-              {{ user.phone }}<br />
-              {{ user.position }}
-            </p>
+            <div
+              class="col-sm-12 col-md-12 col-lg-6 col-xl-6 user-data-text-container"
+            >
+              <h4 class="user-data-text">{{ user.name }}</h4>
+              <p class="user-data-text">
+                {{ user.email }}<br />
+                {{ user.phone }}<br />
+                {{ user.position }}
+              </p>
+            </div>
           </div>
         </div>
-        <!--end of row-->
       </div>
-
+      <!--end of row-->
     </div>
+  </div>
 
-    <!--end of row-->
+  <!--end of row-->
   <!-- </div> -->
 
   <div class="container">
@@ -59,7 +66,6 @@
       users in the block from the top
     </p>
   </div>
-
 </div>
 <!--first container end-->
 
@@ -225,7 +231,6 @@
         <button
           class="signup-set-btn-style btn btn-default"
           type="submit"
-          [disabled]="!signupForm.valid"
         >
           <b> Sign Up</b>
         </button>
@@ -240,7 +245,7 @@
     <img
       class="h-100 raunded-circle"
       [src]="imagePreview"
-      [alt]="signupForm.controls.pathToFileUpload.value"
+      [alt]="signupForm.get('pathToFileUpload').value"
     />
   </div>
 </div>

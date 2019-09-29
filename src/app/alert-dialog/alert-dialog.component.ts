@@ -19,12 +19,8 @@ export class AlertDialogComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+    const dialogRef = this.dialog.open(DialogOverviewDialog, {
       width: '350px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 
@@ -34,14 +30,12 @@ export class AlertDialogComponent {
   selector: 'dialog-overview-dialog',
   templateUrl: 'dialog-overview-dialog.html',
 })
-export class DialogOverviewExampleDialog {
+export class DialogOverviewDialog {
 
   constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-  }
+    public dialogRef: MatDialogRef<DialogOverviewDialog>){}
 
-  onNoClick(): void {
+  onOkClick(): void {
     this.dialogRef.close();
   }
 }

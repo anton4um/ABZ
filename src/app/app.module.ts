@@ -27,9 +27,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 
 import {MatDialogModule} from '@angular/material/dialog';
-import {AlertDialogComponent, DialogOverviewExampleDialog} from './alert-dialog/alert-dialog.component';
-import { AuthComponent } from './auth/auth.component';
-import { LoginDialogComponent, LoginDialogOverviewDialog } from './login-dialog/login-dialog.component';
+import {AlertDialogComponent, DialogOverviewDialog} from './alert-dialog/alert-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +39,9 @@ import { LoginDialogComponent, LoginDialogOverviewDialog } from './login-dialog/
     FooterComponent,
     AppMainNavComponent,
     AlertDialogComponent,
-    DialogOverviewExampleDialog,
-    AuthComponent,
-    LoginDialogComponent,
-    LoginDialogOverviewDialog,
+    DialogOverviewDialog,
   ],
-  entryComponents: [DialogOverviewExampleDialog, LoginDialogOverviewDialog],
+  entryComponents: [DialogOverviewDialog],
   imports: [
     BrowserModule,
     HttpClientModule,

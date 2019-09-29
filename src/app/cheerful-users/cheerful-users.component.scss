@@ -42,7 +42,7 @@ input[name="pathToFileUpload"] {
   /* text align of user data */
   text-align: center;
   overflow-wrap: normal;
-  text-overflow: ellipsis;
+  // text-overflow: ellipsis;
   overflow: scroll;
 }
 /* set Show More button style */
@@ -112,6 +112,19 @@ input[name="pathToFileUpload"] {
   .upload-icon {
     display: inline;
     padding-top: 25%;
+  }
+}
+@media(min-width: 992px){
+  .user-photo-align{
+    padding-right: 5px;
+    text-align: right !important;
+  }
+  .user-data-text{
+    text-align: left !important;
+  }
+  .user-data-text-container{
+    margin-top: 25px;
+    padding-left: 5px;
   }
 }
 

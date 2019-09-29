@@ -2,6 +2,6 @@ export interface UserData {
     email: string;
     name: string;
     phone: string;
-    photo: File;
+    photo: any;
     position_id: number;
 }
