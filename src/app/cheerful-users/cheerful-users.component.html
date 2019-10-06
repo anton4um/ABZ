@@ -6,7 +6,7 @@
   <!-- <div class="row"> -->
   <!--start row-->
 
-  <div class="container">
+  <div class="container" id="users">
     <div class="row">
       <!-- start row for user -->
       <div
@@ -69,7 +69,7 @@
 </div>
 <!--first container end-->
 
-<div class="container" #myForm>
+<div class="container" #myForm id="signin-up">
   <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <div class="row ">
       <div class="form-group col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -193,7 +193,7 @@
             #file
             type="file"
             [hidden]="true"
-            accept="image/*"
+            accept="image/jpg, image/jpeg"
           />
 
           <button
@@ -214,9 +214,8 @@
         <div class="text-left">
           <small
             *ngIf="
-              signupForm.get('pathToFileUpload').untouched ||
-              (signupForm.get('pathToFileUpload').valid &&
-                signupForm.get('upload').value === null)
+              signupForm.get('upload').untouched ||
+              signupForm.get('upload').valid 
             "
             class="col form-text text-muted"
           >
@@ -231,6 +230,7 @@
         <button
           class="signup-set-btn-style btn btn-default"
           type="submit"
+          [disabled]="!signupForm.valid"
         >
           <b> Sign Up</b>
         </button>
@@ -243,7 +243,8 @@
     *ngIf="imagePreview && imagePreview != ''"
   >
     <img
-      class="h-100 raunded-circle"
+      style="height: 72px; width: 72px"
+      class="rounded-circle"
       [src]="imagePreview"
       [alt]="signupForm.get('pathToFileUpload').value"
     />

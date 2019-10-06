@@ -32,3 +32,24 @@ h2, p{
     margin: auto;
   }
 }
+
+@media(min-width: 320px){
+  #container-wrap{
+    background-image: url('../../img/third-block-bg-320.jpg');
+  }
+}
+@media(min-width: 768px){
+  #container-wrap{
+    background-image: url('../../img/third-block-bg-768.jpg');
+  }
+}
+@media(min-width: 1205px){
+  #container-wrap{
+    background-image: url('../../img/third-block-bg-1024.jpg');
+  }
+}
+@media(min-width: 2560px){
+  #container-wrap{
+    background-image: url('../../img/third-block-bg-2560.jpg');
+  }
+}

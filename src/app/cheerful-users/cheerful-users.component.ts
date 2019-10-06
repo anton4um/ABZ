@@ -55,11 +55,20 @@ export class CheerfulUsersComponent implements OnInit, AfterViewInit {
       phone: new FormControl("", Validators.required),
       position: new FormControl(null, Validators.required),
       upload: new FormControl(null, [
-        Validators.required,
+        
         this.uploadFileValidator
       ]),
       pathToFileUpload: new FormControl(null, Validators.required)
     });
+
+    this.httpService.getToken().subscribe(
+      response => {
+        this.secret_token = response.token;
+      },
+      error => {
+        console.log("Network error happened in getToken(): ", error);
+      }
+    );
   }
 
   ngAfterViewInit() {
@@ -77,10 +86,10 @@ export class CheerfulUsersComponent implements OnInit, AfterViewInit {
       // self.signupForm.get("upload").updateValueAndValidity();
       // reading ашду on the specified path by selecting the file
       const reader = new FileReader();
+      reader.readAsDataURL(file);
       reader.onload = () => {
         self.imagePreview = reader.result as string;
       };
-      reader.readAsDataURL(file);
       // setting name of file in to input element of upload elements
       if (self.signupForm.get("upload").valid) {
         self.signupForm.get("pathToFileUpload").setValue(file.name); //event.target["files"][0].name);
@@ -93,9 +102,10 @@ export class CheerfulUsersComponent implements OnInit, AfterViewInit {
   uploadFileValidator(control: FormControl): { [s: string]: boolean } {
     const el = document.getElementById("upload");
     if (
-      el["files"].length === 0 ||
-      (el["files"][0].size > 5242880 &&
-        el["files"][0].type.indexOf("jpg") === -1)
+      el["files"].length !== 0 &&
+      (el["files"][0].size > 5242880 ||
+        el["files"][0].type.indexOf("jpg") === -1 ||
+        el["files"][0].type.indexOf("jpeg") === -1)
     ) {
       return { invalidPhoto: true };
     } else {
@@ -122,7 +132,8 @@ export class CheerfulUsersComponent implements OnInit, AfterViewInit {
     );
   }
 
-  async onSubmit() {
+  onSubmit() {
+    console.log('upoad file value: ', this.signupForm.get('upload'));
     let phoneClearValue: string;
     // clearing the phone value from the stash
     if (this.signupForm.get("phone").valid) {
@@ -145,16 +156,9 @@ export class CheerfulUsersComponent implements OnInit, AfterViewInit {
     );
 
     // getting a secret Token from the server
-    await this.httpService.getToken().subscribe(
-      response => {
-        this.secret_token = response.token;
-      },
-      error => {
-        console.log("Network error happened in getToken(): ", error);
-      }
-    );
+  
     // posting user data to the server side
-  await  this.http
+    this.http
       .post<UserData>(
         "https://frontend-test-assignment-api.abz.agency/api/v1/users",
         userDataPost,
