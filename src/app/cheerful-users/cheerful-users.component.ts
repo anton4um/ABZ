@@ -60,7 +60,7 @@ export class CheerfulUsersComponent implements OnInit, AfterViewInit {
       ]),
       pathToFileUpload: new FormControl(null, Validators.required)
     });
-
+    // getting a secret Token from the server
     this.httpService.getToken().subscribe(
       response => {
         this.secret_token = response.token;
@@ -155,7 +155,6 @@ export class CheerfulUsersComponent implements OnInit, AfterViewInit {
       (this.uploadFileEl as HTMLInputElement).files[0].name
     );
 
-    // getting a secret Token from the server
   
     // posting user data to the server side
     this.http
@@ -179,5 +178,6 @@ export class CheerfulUsersComponent implements OnInit, AfterViewInit {
           console.log("Unknown Error in Nwtwork Request", error);
         }
       );
+      this.signupForm.reset();
   }
 }

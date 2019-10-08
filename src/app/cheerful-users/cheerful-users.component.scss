@@ -43,7 +43,8 @@ input[name="pathToFileUpload"] {
   text-align: center;
   overflow-wrap: normal;
   // text-overflow: ellipsis;
-  overflow: scroll;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /* set Show More button style */
 .showmore-set-btn-style {
