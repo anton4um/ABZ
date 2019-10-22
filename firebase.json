@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/ABZTestTask",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

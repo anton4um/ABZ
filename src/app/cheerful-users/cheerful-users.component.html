@@ -28,7 +28,14 @@
             <div
               class="col-sm-12 col-md-12 col-lg-6 col-xl-6 user-data-text-container"
             >
-              <h4 class="user-data-text">{{ user.name }}</h4>
+              <h4
+                class="user-data-text"
+                style="overflow-wrap: normal;
+              overflow: hidden;
+              text-overflow: ellipsis;"
+              >
+                {{ user.name }}
+              </h4>
               <p class="user-data-text">
                 {{ user.email }}<br />
                 {{ user.phone }}<br />
@@ -215,7 +222,7 @@
           <small
             *ngIf="
               signupForm.get('upload').untouched ||
-              signupForm.get('upload').valid 
+              signupForm.get('upload').valid
             "
             class="col form-text text-muted"
           >

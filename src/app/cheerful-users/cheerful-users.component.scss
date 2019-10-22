@@ -39,10 +39,8 @@ input[name="pathToFileUpload"] {
 }
 
 .user-data-text {
-  /* text align of user data */
   text-align: center;
   overflow-wrap: normal;
-  // text-overflow: ellipsis;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -122,6 +120,9 @@ input[name="pathToFileUpload"] {
   }
   .user-data-text{
     text-align: left !important;
+    overflow-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .user-data-text-container{
     margin-top: 25px;
